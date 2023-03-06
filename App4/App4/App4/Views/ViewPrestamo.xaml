@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.Views.ViewPrestamo"
+             xmlns:local ="clr-namespace:App4.ViewModel"
+             Title="Prestamos">
+
+    <ContentPage.BindingContext>
+
+        <local:ViewModelPrestamo></local:ViewModelPrestamo>
+
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+
+
+            <Label Text="Nombre"></Label>
+            <Picker Title="Persona" ItemsSource="{Binding listaPersonas}" SelectedItem="{Binding PersonaSeleccionada}" ></Picker>
+
+            <Label Text="Libro"></Label>
+            <Picker Title="Libro" ItemsSource="{Binding listaLibros}" SelectedItem="{Binding LibroSeleccionado}" ></Picker>
+
+            <Label Text="Fecha de Prestamo"></Label>
+            <DatePicker Date="{Binding Fechaprestamo}"  ></DatePicker>
+
+            <Label Text="Fecha de Devolucion"></Label>
+            <DatePicker Date="{Binding Fechadevolucion}"  ></DatePicker>
+
+
+
+            <Button Text="Crear Prestamo" Command="{Binding CrearPrestamo}"  ></Button>
+
+
+            <ListView ItemsSource="{Binding ListaPrestamos}" >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" ></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding nombre2}"  ></Label>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding nombre}"  ></Label>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding fechaprestamo}"  ></Label>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding fechadevolucion}"  ></Label>
+                            </Grid>
+
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

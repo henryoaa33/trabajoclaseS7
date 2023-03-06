@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:App4.ViewModel"
+             Title="Personas"
+             x:Class="App4.Views.ViewPersona">
+    <ContentPage.BindingContext>
+        <local:ViewModelPersona></local:ViewModelPersona>
+    </ContentPage.BindingContext>
+
+    <StackLayout>
+        <Frame BackgroundColor="white" Padding="24" CornerRadius="0"   >
+            <Label Text="Biblioteca" HorizontalTextAlignment="Center" TextColor="black" FontSize="36"/>
+        </Frame>
+
+        <Label Text="Nombre"></Label>
+        <Entry Text="{Binding Nombre2}" Keyboard="Text" ></Entry>
+
+        <Label Text="Numero de Cuenta"></Label>
+        <Entry Text="{Binding Numerocuenta}" Keyboard="Numeric"></Entry>
+
+        <Button Command="{Binding CrearPersona}" Text="Crear Persona"></Button>
+
+        <ListView ItemsSource="{Binding ListaPersonas}" >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                                <ColumnDefinition Width="*" ></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" ></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding nombre2}"  ></Label>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding numerocuenta}"  ></Label>
+                        </Grid>
+
+
+
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+
+    </StackLayout>
+</ContentPage>
