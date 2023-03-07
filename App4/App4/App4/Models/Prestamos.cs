@@ -12,7 +12,9 @@ namespace App4.Models
         public DateTime fechaprestamo { get; set; }
         public DateTime fechadevolucion { get; set; }
 
-        public List<Prestamo> Prestamos { get; set; } = new List<Prestamo>();
+        public Persona personaprestamo { get; set; }
+
+        public Libros libroprestamo { get; set; }
 
         public override string ToString()
         {

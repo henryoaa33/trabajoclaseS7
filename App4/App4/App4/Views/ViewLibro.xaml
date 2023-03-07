@@ -52,7 +52,7 @@
 
                             <Label  Text="{Binding nombre}" Grid.Row="0" Grid.Column="0" ></Label>
                             <Label  Text="{Binding autor}" Grid.Row="0" Grid.Column="1" ></Label>
-                            <Label  Text="{Binding fechadeimpresion}" Grid.Row="0" Grid.Column="2" ></Label>
+                            <Label  Text="{Binding fechadeimpresion, StringFormat='{0:yyyy-MM-dd}' }" Grid.Row="0" Grid.Column="2" ></Label>
 
 
                         </Grid>

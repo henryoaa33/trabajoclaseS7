@@ -23,12 +23,15 @@ namespace App4.ViewModel
             CrearPrestamo = new Command(
 
                     () => {
-
+                        
                         Prestamo p = new Prestamo()
                         {
 
                             fechaprestamo = this.fechaprestamo,
-                            fechadevolucion = this.fechadevolucion
+                            fechadevolucion = this.fechadevolucion,
+                            personaprestamo = this.peronaSeleccionada,
+                            libroprestamo = this.libroSeleccionado
+
 
 
 
@@ -84,16 +87,6 @@ namespace App4.ViewModel
             }
 
         
-
-
-            AsignarLibros = new Command(() => {
-
-                peronaSeleccionada.LibrosPersona.Add(libroSeleccionado);
-                int i = 0;
-                i = i + 1;
-
-            });
-
 
 
         }

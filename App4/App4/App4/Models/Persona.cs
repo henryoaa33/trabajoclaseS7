@@ -12,7 +12,6 @@ namespace App4.Models
         public string nombre2 { get; set; }
         public double numerocuenta { get; set; }
 
-        public List<Libros> LibrosPersona { get; set; } = new List<Libros>();
 
         public override string ToString()
         {
